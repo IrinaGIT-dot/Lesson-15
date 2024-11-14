@@ -2,7 +2,7 @@ import {expect, test} from "@playwright/test";
 
 test.beforeEach(async ({ page }) => {
     const path = require('path');
-    const filePath = `file://${path.resolve('dummy-order.html')}`;
+    const filePath = `file://${path.resolve('dummy-demo.html')}`;
     await page.goto(filePath);
 
     //const filePath = path.resolve('dummy-order.html');
@@ -12,7 +12,7 @@ test.beforeEach(async ({ page }) => {
 test('Button Place your order is disabled', async ({ page }) => {
     await expect(page.getByTestId("submit-order")).toBeDisabled()
     }
-)
+);
 
 test('Button Place your order is enabled', async ({ page }) => {
     const userNameField = page.getByTestId("username")
